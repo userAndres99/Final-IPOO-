@@ -141,13 +141,12 @@ class Pasajero {
 					$resp= true;
 				}				
 			
-		 	}else {
+		 	}else{
 		 		$this->set_mensajeoperacion($base->getError());
 		 		
 			}
 		}else{
-		 	$this->set_mensajeoperacion($base->getError());
-		 	
+		 	$this->set_mensajeoperacion($base->getError());	
 		}		
 		return $resp;
 	}
@@ -227,12 +226,10 @@ class Pasajero {
 			if($base->Ejecutar($consultaModifica)){
 			    $resp=  true;
 			}else{
-				$this->set_mensajeoperacion($base->getError());
-				
+				$this->set_mensajeoperacion($base->getError());	
 			}
 		}else{
-				$this->set_mensajeoperacion($base->getError());
-			
+			$this->set_mensajeoperacion($base->getError());	
 		}
 		return $resp;
 	}
@@ -244,15 +241,15 @@ class Pasajero {
 		$base=new BaseDatos();
 		$resp=false;
 		if($base->Iniciar()){
-				$consultaBorra="DELETE FROM pasajero WHERE pdocumento=".$this->get_pdocumento();
-				if($base->Ejecutar($consultaBorra)){
-				    $resp=  true;
-				}else{
-						$this->set_mensajeoperacion($base->getError());
-					
-				}
-		}else{
+			$consultaBorra="DELETE FROM pasajero WHERE pdocumento=".$this->get_pdocumento();
+			if($base->Ejecutar($consultaBorra)){
+				$resp=  true;
+			}else{
 				$this->set_mensajeoperacion($base->getError());
+					
+			}
+		}else{
+			$this->set_mensajeoperacion($base->getError());
 			
 		}
 		return $resp; 

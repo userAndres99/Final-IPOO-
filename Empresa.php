@@ -18,15 +18,6 @@ class Empresa {
         $this->mensajeoperacion=''; 
     }
 
-    /**
-     * carga los valores de la empresa
-     */
-    public function cargar($idempresa,$enombre,$edireccion){
-        $this->set_idempresa($idempresa);
-        $this->set_enombre($enombre);
-        $this->set_edireccion($edireccion);
-    }
-
     //========== METODOS GET ==========
     /**
      * para obtener el id de la empresa
@@ -103,11 +94,11 @@ class Empresa {
     /**
      * carga los valores de la empresa
      */
-    /*public function cargar($idempresa,$enombre,$edireccion){
+    public function cargar($idempresa,$enombre,$edireccion){
         $this->set_idempresa($idempresa);
         $this->set_enombre($enombre);
         $this->set_edireccion($edireccion);
-    }*/
+    }
     /**
 	 * Recupera los datos de una empresa 
 	 * @param int 
@@ -229,11 +220,11 @@ class Empresa {
 				if($base->Ejecutar($consultaBorra)){
 				    $resp=  true;
 				}else{
-						$this->set_mensajeoperacion($base->getError());
+					$this->set_mensajeoperacion($base->getError());
 					
 				}
 		}else{
-				$this->set_mensajeoperacion($base->getError());
+			$this->set_mensajeoperacion($base->getError());
 			
 		}
 		return $resp; 

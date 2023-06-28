@@ -216,15 +216,15 @@ class Viaje {
 				}
 				
 			
-		 	}	else {
-		 			$this->set_mensajeoperacion($base->getError());
+		 	}else {
+		 		$this->set_mensajeoperacion($base->getError());
 		 		
 			}
-		 }	else {
-		 		$this->set_mensajeoperacion($base->getError());
+		 }else{
+		 	$this->set_mensajeoperacion($base->getError());
 		 	
-		 }	
-		 return $arregloViaje;
+		}	
+		return $arregloViaje;
 	}
     /**
      * Inserta el objeto de viaje actual en la base de datos
@@ -268,7 +268,7 @@ class Viaje {
 				
 			}
 		}else{
-				$this->set_mensajeoperacion($base->getError());
+			$this->set_mensajeoperacion($base->getError());
 			
 		}
 		return $resp;
@@ -281,15 +281,15 @@ class Viaje {
 		$base=new BaseDatos();
 		$resp=false;
 		if($base->Iniciar()){
-				$consultaBorra="DELETE FROM viaje WHERE idviaje=".$this->get_idviaje();
-				if($base->Ejecutar($consultaBorra)){
-				    $resp=  true;
-				}else{
-						$this->set_mensajeoperacion($base->getError());
-					
-				}
-		}else{
+			$consultaBorra="DELETE FROM viaje WHERE idviaje=".$this->get_idviaje();
+			if($base->Ejecutar($consultaBorra)){
+				$resp=  true;
+			}else{
 				$this->set_mensajeoperacion($base->getError());
+					
+			}
+		}else{
+			$this->set_mensajeoperacion($base->getError());
 			
 		}
 		return $resp; 

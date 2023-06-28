@@ -224,11 +224,11 @@ class ResponsableV {
 				if($base->Ejecutar($consultaBorra)){
 				    $resp=  true;
 				}else{
-						$this->set_mensajeoperacion($base->getError());
+					$this->set_mensajeoperacion($base->getError());
 					
 				}
 		}else{
-				$this->set_mensajeoperacion($base->getError());
+			$this->set_mensajeoperacion($base->getError());
 			
 		}
 		return $resp; 
